@@ -1,4 +1,5 @@
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import '../public/index.css'
 
 function MyApp({ Component, pageProps }) {
   return (
