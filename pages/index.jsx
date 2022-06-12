@@ -61,7 +61,7 @@ const Home = () => {
       <Box h="calc(100vh - 90px)">
         <Box py={12}>
           <Flex direction="column" maxW="640px" h="auto" mx="auto">
-            <Box px={2}>
+            <Box px={2} maxW='max-content'>
               <Image src={Profile} alt="Andrés Rodríguez" priority="true" className="rounded" />
             </Box>
             <Flex
@@ -71,7 +71,7 @@ const Home = () => {
               justifyContent="center"
             >
               <Heading mt={2}>Who am I?</Heading>
-              <Text px={8} py={4} fontSize="18px" fontWeight="500">
+              <Text px={8} py={4} fontSize="18px" fontWeight="500" textAlign='center'>
                 I am a Frontend Developer and Designer. I build awesome looking
                 websites and Web Applications with the latest technologies out
                 there. Take a look over my portfolio and see what I am capable
