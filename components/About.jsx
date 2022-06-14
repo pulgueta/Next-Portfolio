@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Box,
   Flex,
@@ -89,6 +91,17 @@ const About = () => {
             I use...
           </Heading>
           <List
+            as={motion.ul}
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                duration: 0.75,
+                delay: 1,
+              },
+            }}
             spacing={3}
             fontWeight={500}
             w={["360px", "400px", "600px"]}
@@ -212,7 +225,9 @@ const About = () => {
               <Text fontWeight={500} fontSize={"xl"}>
                 Checkout my past projects here:
               </Text>
-              <IconButton icon={<ArrowForwardIcon />} />
+              <Link href={'/projects'}>
+                <IconButton icon={<ArrowForwardIcon />} />
+              </Link>
             </Flex>
           </Box>
         </Box>
