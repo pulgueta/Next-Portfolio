@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Box, Heading, Flex, Text, IconButton } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
@@ -93,9 +94,22 @@ const Landing = () => {
                 there. Take a look over my portfolio and see what I am capable
                 of!
               </Text>
-              <IconButton mt={[14, 12, 8]}>
+
+              <Box
+                as={motion.div}
+                initial={{ opacity: 0, y: 60 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                    delay: 0.85,
+                  },
+                }}
+                mt={10}
+              >
                 <ArrowDownIcon />
-              </IconButton>
+              </Box>
             </Flex>
           </Flex>
         </Box>
