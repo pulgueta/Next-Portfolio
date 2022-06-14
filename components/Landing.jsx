@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { Box, Heading, Flex, Text } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text, IconButton } from "@chakra-ui/react";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 
 import Profile from "../public/profile.jpg";
@@ -25,7 +26,7 @@ const Landing = () => {
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Box h="calc(100vh - 90px)">
+      <Box h="calc(100vh - 80px)">
         <Box py={12}>
           <Flex direction="column" maxW="640px" h="auto" mx="auto">
             <Box
@@ -87,11 +88,14 @@ const Landing = () => {
                 fontWeight="500"
                 textAlign="center"
               >
-                I am a Frontend Developer and Designer. I build awesome looking
+                I am a FullStack Developer and Designer. I build awesome looking
                 websites and Web Applications with the latest technologies out
                 there. Take a look over my portfolio and see what I am capable
                 of!
               </Text>
+              <IconButton mt={[14, 12, 8]}>
+                <ArrowDownIcon />
+              </IconButton>
             </Flex>
           </Flex>
         </Box>

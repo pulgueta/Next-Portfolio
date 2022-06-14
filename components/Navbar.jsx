@@ -6,7 +6,7 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   return (
-    <Box width="100%" h="90px" boxShadow={isDark ? "md" : "base"}>
+    <Box width="100%" h="80px" boxShadow={isDark ? "md" : "base"}>
       <Flex
         maxW="1024px"
         px={[8, 12, 14, 16, 0]}
