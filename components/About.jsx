@@ -39,7 +39,7 @@ const About = () => {
           <List
             spacing={3}
             fontWeight={500}
-            w={["360px", "100%", "100%", "50%"]}
+            w={["360px", "400px", "600px"]}
             rounded="lg"
             mx={"auto"}
             bg={isDark ? "gray.700" : "gray.200"}
