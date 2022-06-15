@@ -49,7 +49,7 @@ const ProjectCard = ({ title, description, img, link }) => {
           <Text fontWeight={500}>{description}</Text>
           <Flex justifyContent={"flex-end"}>
             <Button mt={4} bg={isDark ? "gray.500" : "gray.300"}>
-              <a href={link} target="_blank">
+              <a href={link} target="_blank" rel="noreferrer">
                 Go to the site
               </a>
             </Button>
