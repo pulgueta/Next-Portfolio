@@ -8,6 +8,7 @@ import ProjectCard from "../components/ProjectCard";
 
 import AnnyKactus from "../public/annykactus.png";
 import Chat from "../public/chatting.svg";
+import Recicla from '../public/garbage-recycle.svg'
 
 const Projects = () => {
   const projects = [
@@ -15,16 +16,23 @@ const Projects = () => {
       id: 1,
       title: "Anny Kactus",
       description: `Anny Kactus is an online ecommerce store, where you can buy
-      decorative plants at a great place.`,
+      decorative plants at a great price.`,
       img: AnnyKactus,
       link: `https://annykactus.com`,
     },
     {
       id: 2,
       title: "Chat with Firebase",
-      description: `I made a simple chat application; you can use your Google account to login but messages will show anonymously.`,
+      description: `I made a simple chat application; you can use your Google account to login, however, messages will show anonymously.`,
       img: Chat,
       link: `https://pulgueta-chat.firebaseapp.com/`,
+    },
+    {
+      id: 3,
+      title: "Distrito Recicla",
+      description: `This is a collaboration with another developer, where I made the Landing of his website, and clicking a button will send the user to the whole fancy application.`,
+      img: Recicla,
+      link: `https://distritorecicla.site/`,
     },
   ];
 

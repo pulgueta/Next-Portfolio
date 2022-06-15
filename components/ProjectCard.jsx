@@ -37,12 +37,11 @@ const ProjectCard = ({ title, description, img, link }) => {
           <Image
             src={img}
             objectFit="cover"
-            quality={100}
             width={200}
             height={244}
           />
         </Box>
-        <Flex direction={"column"} ml={5} maxW={"60%"}>
+        <Flex direction={"column"} ml={5} maxW={"65%"}>
           <Heading as={"h3"} size="lg" mb={6}>
             {title}
           </Heading>
