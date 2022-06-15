@@ -25,12 +25,18 @@ const About = () => {
         justify="center"
         alignItems="center"
         direction="column"
+        overflowX={"hidden"}
         px={[4, 4, 4, 2]}
         py={10}
         maxW="5xl"
+        h="100%"
         mx="auto"
+        my="auto"
       >
         <Heading
+          viewport={{
+            once: true,
+          }}
           as={motion.h1}
           initial={{
             opacity: 0,
@@ -48,6 +54,9 @@ const About = () => {
           A little bit about me:
         </Heading>
         <Text
+          viewport={{
+            once: true,
+          }}
           as={motion.p}
           initial={{
             opacity: 0,
@@ -71,6 +80,9 @@ const About = () => {
 
         <Box w={600} py={2}>
           <Heading
+            viewport={{
+              once: true,
+            }}
             as={motion.h2}
             initial={{
               opacity: 0,
@@ -91,6 +103,9 @@ const About = () => {
             I use...
           </Heading>
           <List
+            viewport={{
+              once: true,
+            }}
             as={motion.ul}
             initial={{
               opacity: 0,
@@ -111,6 +126,9 @@ const About = () => {
             p={6}
           >
             <ListItem
+              viewport={{
+                once: true,
+              }}
               as={motion.li}
               initial={{
                 opacity: 0,
@@ -129,6 +147,9 @@ const About = () => {
               ReactJS for the Frontend.
             </ListItem>
             <ListItem
+              viewport={{
+                once: true,
+              }}
               as={motion.li}
               initial={{
                 opacity: 0,
@@ -147,6 +168,9 @@ const About = () => {
               NodeJS and Firebase for the Backend.
             </ListItem>
             <ListItem
+              viewport={{
+                once: true,
+              }}
               as={motion.li}
               initial={{
                 opacity: 0,
@@ -165,6 +189,9 @@ const About = () => {
               TailwindCSS, Styled-Components and ChakraUI for the styling.
             </ListItem>
             <ListItem
+              viewport={{
+                once: true,
+              }}
               as={motion.li}
               initial={{
                 opacity: 0,
@@ -185,6 +212,9 @@ const About = () => {
           </List>
           <Box w={[400, 500, 600]} mx={"auto"}>
             <Heading
+              viewport={{
+                once: true,
+              }}
               as={motion.h1}
               initial={{
                 opacity: 0,
@@ -204,6 +234,9 @@ const About = () => {
               Want to know what I have done?
             </Heading>
             <Flex
+              viewport={{
+                once: true,
+              }}
               as={motion.div}
               initial={{
                 opacity: 0,
@@ -225,7 +258,7 @@ const About = () => {
               <Text fontWeight={500} fontSize={"xl"}>
                 Checkout my past projects here:
               </Text>
-              <Link href={'/projects'}>
+              <Link href={"/projects"}>
                 <IconButton icon={<ArrowForwardIcon />} />
               </Link>
             </Flex>
