@@ -38,7 +38,7 @@ const ProjectCard = ({ title, description, img, link }) => {
             src={img}
             objectFit="cover"
             quality={100}
-            width={[200]}
+            width={200}
             height={244}
           />
         </Box>
