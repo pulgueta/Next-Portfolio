@@ -27,7 +27,7 @@ const About = () => {
         direction="column"
         overflowX={"hidden"}
         px={[4, 4, 4, 2]}
-        py={10}
+        py={5}
         maxW="5xl"
         h="100%"
         mx="auto"

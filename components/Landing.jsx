@@ -86,7 +86,7 @@ const Landing = () => {
                   delay: 0.85,
                 },
               }}
-              mt={10}
+              mt={5}
             >
               <ArrowDownIcon />
             </Box>

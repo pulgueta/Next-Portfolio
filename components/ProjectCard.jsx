@@ -29,28 +29,25 @@ const ProjectCard = ({ title, description, img, link }) => {
       boxShadow={"md"}
     >
       <Flex alignItems={"center"}>
-        <Box
+        <Flex
           borderLeftRadius={8}
-          h="100%"
+          h={250}
+          width={[250, 400]}
           bg={isDark ? "gray.400" : "gray.200"}
         >
-          <Image
-            src={img}
-            alt={title}
-            objectFit="cover"
-            width={200}
-            height={244}
-          />
-        </Box>
-        <Flex direction={"column"} ml={5} maxW={"65%"}>
-          <Heading as={"h3"} size="lg" mb={6}>
+          <Image objectFit="cover" src={img} alt={title} priority />
+        </Flex>
+        <Flex direction={"column"} maxW={["70%", "80%"]} px={[4, 6]}>
+          <Heading as={"h3"} size={"lg"} mb={[2, 4]}>
             {title}
           </Heading>
-          <Text fontWeight={500}>{description}</Text>
+          <Text fontWeight={500} fontSize={[14, 18]} maxW={"65ch"}>
+            {description}
+          </Text>
           <Flex justifyContent={"flex-end"}>
             <Button mt={4} bg={isDark ? "gray.500" : "gray.300"}>
               <a href={link} target="_blank" rel="noreferrer">
-                Go to the site
+                Website
               </a>
             </Button>
           </Flex>

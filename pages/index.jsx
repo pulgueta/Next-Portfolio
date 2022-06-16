@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 import About from "../components/About";
-import Footer from "../components/Footer";
 import Landing from "../components/Landing";
 
 const Home = () => {
@@ -25,7 +24,6 @@ const Home = () => {
       </Head>
       <Landing />
       <About />
-      <Footer />
     </>
   );
 };
