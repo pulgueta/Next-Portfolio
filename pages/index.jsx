@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import Landing from "../components/Landing";
+import About from "../components/About";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Landing />
+      <About />
     </>
   );
 };

@@ -1,16 +1,11 @@
 import { useRouter } from "next/router";
 
-import { useState } from "react";
-
 import {
   Box,
   Heading,
   Flex,
-  Link,
   IconButton,
   useColorMode,
-  useDisclosure,
-  Fade,
   Button,
   Tooltip,
 } from "@chakra-ui/react";
@@ -22,10 +17,6 @@ import Hover from "./Hover";
 
 const Navbar = () => {
   const router = useRouter();
-
-  const [icon, setIcon] = useState(false);
-
-  const { isOpen, onToggle } = useDisclosure(true);
 
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
