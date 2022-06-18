@@ -22,7 +22,7 @@ import { motion } from "framer-motion";
 
 import emailjs from "@emailjs/browser";
 
-import { publicKey, templateId, serviceId } from "../public/email";
+import { publicKey, templateId, serviceId } from "./email";
 
 const Contact = () => {
   const formRef = useRef();
