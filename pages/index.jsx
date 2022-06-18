@@ -1,6 +1,5 @@
 import Head from "next/head";
 
-import About from "../components/About";
 import Landing from "../components/Landing";
 
 const Home = () => {
@@ -23,7 +22,6 @@ const Home = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Landing />
-      <About />
     </>
   );
 };

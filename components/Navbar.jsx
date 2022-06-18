@@ -12,13 +12,13 @@ import {
   useDisclosure,
   Fade,
   Button,
+  Tooltip,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 import { motion } from "framer-motion";
 
-import Colombia from "./Colombia";
-import USA from "./USA";
+import Hover from "./Hover";
 
 const Navbar = () => {
   const router = useRouter();
@@ -74,19 +74,25 @@ const Navbar = () => {
           </Button>
         </Heading>
         <Box>
-          <IconButton
-            mr={4}
-            as={motion.button}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: {
-                duration: 0.75,
-              },
-            }}
-            onClick={() => setIcon(!icon)}
-            icon={icon ? <USA /> : <Colombia />}
-          ></IconButton>
+          <Tooltip
+            bg={isDark ? "gray.300" : "gray.500"}
+            label="Si hablas español, contáctame con el formulario en tu idioma."
+            aria-label="A tooltip"
+          >
+            <IconButton
+              mr={4}
+              as={motion.button}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 0.75,
+                },
+              }}
+              icon={<Hover />}
+            ></IconButton>
+          </Tooltip>
+
           <IconButton
             aria-label="Set color mode"
             as={motion.button}

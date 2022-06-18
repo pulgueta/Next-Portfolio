@@ -247,7 +247,7 @@ const About = () => {
                 x: 0,
                 transition: {
                   duration: 0.75,
-                  delay: 2,
+                  delay: 1.5,
                 },
               }}
               w={["90%", "80%", "60%"]}
