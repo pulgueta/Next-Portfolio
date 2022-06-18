@@ -12,16 +12,26 @@ const Landing = () => {
       <Box minH="calc(100vh - 80px)">
         <Box py={12}>
           <Box direction="column" maxW="640px" h="auto" mx="auto" px={4}>
-            <Image
-              src={Profile}
-              alt="Andrés Rodríguez"
-              w={1027}
-              h={782} 
-              priority="true"
-              className="rounded"
-              
-            />
-
+            <Box
+              as={motion.div}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1,
+                },
+              }}
+            >
+              <Image
+                src={Profile}
+                alt="Andrés Rodríguez"
+                w={1027}
+                h={782}
+                priority="true"
+                className="rounded"
+              />
+            </Box>
             <Flex
               h="100%"
               direction="column"

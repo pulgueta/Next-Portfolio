@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 import {
   Box,
@@ -10,28 +10,21 @@ import {
   FormLabel,
   Heading,
   Input,
-  InputGroup,
-  Stack,
   Textarea,
-  VStack,
   useColorMode,
   useToast,
   FormErrorMessage,
 } from "@chakra-ui/react";
 
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 
 import { motion } from "framer-motion";
 
-import { validateEmail } from "../functions/validateEmail";
+import emailjs from "@emailjs/browser";
+
+import { publicKey, serviceId, templateId } from "../email";
 
 const Contact = () => {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
   const formRef = useRef();
 
   const { colorMode } = useColorMode();
@@ -39,28 +32,34 @@ const Contact = () => {
 
   const toast = useToast();
 
-  const handleEmail = async (e) => {
-    e.preventDefault();
-
-    if (data.name === "" || data.email === "" || data.message === "") {
-      toast({
-        title: "Please fill all the fields!",
-        description: "Empty spaces cannot be send.",
-        status: "error",
-        duration: 2000,
-        isClosable: true,
-        position: "top",
+  const handleEmail = () => {
+    emailjs
+      .sendForm(
+        process.env.EMAILJS_SERVICEID,
+        process.env.EMAILJS_TEMPLATEID,
+        formRef.current,
+        process.env.EMAILJS_PUBLICKEY
+      )
+      .then(() => {
+        toast({
+          title: "Email sent!",
+          description: "Thanks for reaching out!",
+          status: "success",
+          duration: 2500,
+          position: "top",
+          isClosable: true,
+        });
+      })
+      .catch(() => {
+        toast({
+          title: "Email not sent!",
+          description: "Something went wrong, please try again.",
+          status: "error",
+          duration: 2500,
+          position: "top",
+          isClosable: true,
+        });
       });
-    } else if (!validateEmail) {
-      toast({
-        title: "Please enter a valid email!",
-        description: "Please &#9997;",
-        status: "error",
-        duration: 2000,
-        isClosable: true,
-        position: "top",
-      });
-    }
   };
 
   return (
@@ -86,6 +85,18 @@ const Contact = () => {
         px={[4, 4, 0]}
       >
         <Box
+          as={motion.div}
+          initial={{
+            opacity: 0,
+            y: -30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+            },
+          }}
           bg={isDark ? "gray.700" : "gray.100"}
           p={6}
           borderRadius={"xl"}
@@ -99,14 +110,13 @@ const Contact = () => {
           <Formik
             initialValues={{ name: "", email: "", message: "" }}
             onSubmit={(values, actions) => {
-              setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                actions.setSubmitting(false);
-              }, 1000);
+              actions.setSubmitting(false);
+              actions.resetForm();
+              handleEmail(values);
             }}
           >
             {(props) => (
-              <Form>
+              <Form ref={formRef}>
                 <Field name="name">
                   {({ field, form }) => (
                     <FormControl
@@ -116,7 +126,16 @@ const Contact = () => {
                       <FormLabel htmlFor="name">You name</FormLabel>
                       <Input {...field} id="name" placeholder="John Doe" />
                       <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
 
+                <Field name="email">
+                  {({ field, form }) => (
+                    <FormControl
+                      isRequired
+                      isInvalid={form.errors.email && form.touched.email}
+                    >
                       <FormLabel mt={2} htmlFor="email">
                         Email
                       </FormLabel>
@@ -126,7 +145,16 @@ const Contact = () => {
                         placeholder="user@domain.com"
                       />
                       <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
 
+                <Field name="message">
+                  {({ field, form }) => (
+                    <FormControl
+                      isRequired
+                      isInvalid={form.errors.message && form.touched.message}
+                    >
                       <FormLabel mt={2} htmlFor="message">
                         Message
                       </FormLabel>
@@ -141,6 +169,7 @@ const Contact = () => {
                     </FormControl>
                   )}
                 </Field>
+
                 <Flex justify={"center"}>
                   <Button
                     bg={isDark ? "gray.800" : "gray.300"}
