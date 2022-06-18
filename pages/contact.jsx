@@ -22,8 +22,6 @@ import { motion } from "framer-motion";
 
 import emailjs from "@emailjs/browser";
 
-import { publicKey, serviceId, templateId } from "../email";
-
 const Contact = () => {
   const formRef = useRef();
 
