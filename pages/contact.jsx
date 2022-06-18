@@ -22,6 +22,8 @@ import { motion } from "framer-motion";
 
 import emailjs from "@emailjs/browser";
 
+import { publicKey, templateId, serviceId } from "../email";
+
 const Contact = () => {
   const formRef = useRef();
 
@@ -32,12 +34,7 @@ const Contact = () => {
 
   const handleEmail = () => {
     emailjs
-      .sendForm(
-        process.env.EMAILJS_SERVICEID,
-        process.env.EMAILJS_TEMPLATEID,
-        formRef.current,
-        process.env.EMAILJS_PUBLICKEY
-      )
+      .sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(() => {
         toast({
           title: "Email sent!",

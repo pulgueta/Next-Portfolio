@@ -20,7 +20,7 @@ const Footer = () => {
       <Text fontWeight={500} pr={2} color={isDark ? "white" : "gray.700"}>
         &copy; Andrés Rodríguez &#124; Deployed by
       </Text>
-      <Image src={Vercel} width={75} />
+      <Image src={Vercel} width={75} alt='Vercel logo' />
     </Flex>
   );
 };
