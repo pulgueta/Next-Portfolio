@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Box, Heading, Flex, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,7 @@ const Landing = () => {
     <>
       <Box minH="calc(100vh - 80px)">
         <Box py={12}>
-          <Flex direction="column" maxW="640px" h="auto" mx="auto" px={4}>
+          <VStack maxW="640px" h="auto" mx="auto" px={4}>
             <Box
               as={motion.div}
               initial={{ opacity: 0, y: -20 }}
@@ -34,9 +34,8 @@ const Landing = () => {
                 className="rounded"
               />
             </Box>
-            <Flex
+            <VStack
               h="100%"
-              direction="column"
               alignItems="center"
               justifyContent="center"
             >
@@ -93,8 +92,8 @@ const Landing = () => {
               >
                 <ArrowDownIcon />
               </Box>
-            </Flex>
-          </Flex>
+            </VStack>
+          </VStack>
         </Box>
       </Box>
     </>

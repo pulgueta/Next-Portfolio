@@ -10,6 +10,7 @@ import {
   Text,
   useColorMode,
   IconButton,
+  VStack,
 } from "@chakra-ui/react";
 import { CheckIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 
@@ -20,10 +21,7 @@ const About = () => {
   const isDark = colorMode === "dark";
 
   return (
-    <Flex
-      justify="center"
-      alignItems="center"
-      direction="column"
+    <VStack
       overflowX={"hidden"}
       px={[4, 4, 4, 2]}
       py={4}
@@ -266,7 +264,7 @@ const About = () => {
           </Flex>
         </Box>
       </Box>
-    </Flex>
+    </VStack>
   );
 };
 
