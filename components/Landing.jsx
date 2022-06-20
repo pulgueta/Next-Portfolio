@@ -11,7 +11,7 @@ const Landing = () => {
     <>
       <Box minH="calc(100vh - 80px)">
         <Box py={12}>
-          <VStack maxW="640px" h="auto" mx="auto" px={4}>
+          <VStack maxW="600px" h="auto" mx="auto" px={4}>
             <Box
               as={motion.div}
               initial={{ opacity: 0, y: -20 }}
@@ -23,7 +23,7 @@ const Landing = () => {
                 },
               }}
               mx={'auto'}
-              maxW="420px"
+              maxW="640px"
             >
               <Image
                 src={Profile}
