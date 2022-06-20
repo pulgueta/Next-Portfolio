@@ -4,14 +4,14 @@ import { Box, Heading, Flex, Text } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 
-import Profile from "../public/profile.jpg";
+import Profile from "../public/optimized.png";
 
 const Landing = () => {
   return (
     <>
       <Box minH="calc(100vh - 80px)">
         <Box py={12}>
-          <Box direction="column" maxW="640px" h="auto" mx="auto" px={4}>
+          <Flex direction="column" maxW="640px" h="auto" mx="auto" px={4}>
             <Box
               as={motion.div}
               initial={{ opacity: 0, y: -20 }}
@@ -22,12 +22,14 @@ const Landing = () => {
                   duration: 1,
                 },
               }}
+              mx={'auto'}
+              maxW="420px"
             >
               <Image
                 src={Profile}
                 alt="Andrés Rodríguez"
-                w={1027}
-                h={782}
+                maxW={800}
+                h={800}
                 priority="true"
                 className="rounded"
               />
@@ -92,7 +94,7 @@ const Landing = () => {
                 <ArrowDownIcon />
               </Box>
             </Flex>
-          </Box>
+          </Flex>
         </Box>
       </Box>
     </>
