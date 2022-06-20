@@ -4,7 +4,7 @@ import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 
-import Profile from "../public/optimized.png";
+import Profile from "../public/profile.jpg";
 
 const Landing = () => {
   return (
